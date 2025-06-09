@@ -1,0 +1,17 @@
+- name: Vine Whip
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+3 [slashing]
+              overheal: null
+          miss: []
+    - type: text
+      text: Sprigatito lashes out with a vine, dealing 2d6+3 slashing damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: "lashes out with a "
