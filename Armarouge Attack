@@ -1,0 +1,21 @@
+- name: Flaming Greatsword
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d8+3 [slashing]
+              overheal: null
+            - type: damage
+              damage: 2d6 [fire]
+              overheal: null
+          miss: []
+    - type: text
+      text: Armarouge strikes with a flaming greatsword, dealing slashing and fire
+        damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: strikes with a flaming greatsword
