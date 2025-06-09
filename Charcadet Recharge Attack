@@ -1,0 +1,69 @@
+- name: Flame Burst
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Flame Burst Used
+          duration: null
+          effects: null
+          attacks: []
+          buttons:
+            - label: Recharge Flame Burst
+              automation:
+                - type: roll
+                  dice: 1d6
+                  name: recharge
+                  hidden: false
+                  cantripScale: false
+                - type: condition
+                  condition: int(recharge) >= 5
+                  onTrue:
+                    - type: remove_ieffect
+                    - type: text
+                      text: "{{caster.name}} recharges their Flame Burst!"
+                      title: Effect
+                  onFalse:
+                    - type: text
+                      text: "{{caster.name}} doesn't recharge their Flame Burst!"
+                      title: Effect
+                  errorBehaviour: "false"
+              verb: attempts to recharge their Flame Burst
+              style: "3"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: null
+          conc: null
+          desc: null
+          stacking: true
+          save_as: null
+          parent: null
+          target_self: null
+          tick_on_caster: null
+    - type: roll
+      dice: 3d6 [fire]
+      name: damage
+      hidden: null
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: dex
+          fail:
+            - type: damage
+              damage: "{damage}"
+              overheal: null
+          success:
+            - type: damage
+              damage: "{damage}/2"
+              overheal: null
+          dc: "13"
+    - type: text
+      text: Charcadet releases a burst of flames in a 15-foot radius. Creatures in the
+        area must make a DC 13 Dexterity saving throw, taking full fire damage
+        on a failed save, or half damage on success.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: releases a burst of flame
