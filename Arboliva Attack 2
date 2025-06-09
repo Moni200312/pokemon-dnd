@@ -1,0 +1,16 @@
+- name: Verdant Slash
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 4d8+4 [slashing]
+              overheal: null
+          miss: []
+    - type: text
+      text: Arboliva slashes with razor-sharp leaves, dealing 4d8+4 slashing damage on
+        a hit.
+      title: Effect
+  _v: 2
