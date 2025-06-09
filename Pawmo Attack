@@ -1,0 +1,34 @@
+- name: Thunder Palm
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d10+3 [lightning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: ieffect
+                  name: Stunned
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target is briefly stunned by the shocking impact.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "13"
+          miss: []
+    - type: text
+      text: Pawmo strikes with an electrified palm. On a hit, the target takes 2d10+3
+        lightning damage and must succeed on a DC 13 Constitution saving throw
+        or be stunned until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: delivers a shocking palm strike
