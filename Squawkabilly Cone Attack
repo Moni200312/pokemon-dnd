@@ -1,0 +1,29 @@
+- name: Wing Buffet
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 3d6+3 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: condition
+                  condition: Prone
+                  onTrue: []
+                  onFalse: []
+                  errorBehaviour: null
+              success: []
+              dc: "14"
+          miss: []
+    - type: text
+      text: Squawkabilly beats its wings powerfully in a 10-foot cone, dealing 3d6+3
+        bludgeoning damage. Creatures that fail a DC 14 Strength saving throw
+        are knocked prone.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: beats its wings powerfully
