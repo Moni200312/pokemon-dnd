@@ -1,0 +1,36 @@
+- name: Silken Trap
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 1d4+2 [piercing]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: ieffect
+                  name: Restrained
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target is wrapped in sticky webbing. It can use an action to make a DC
+                    12 Strength check to break free.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "12"
+          miss: []
+    - type: text
+      text: Tarountula lashes out with webbing and sharp limbs. On a hit, the target
+        takes 1d4+2 piercing damage and must succeed on a DC 12 Strength saving
+        throw or become restrained for 1 minute. The target can repeat the save
+        at the end of each of its turns or use an action to break free.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: strikes with sticky webbing
