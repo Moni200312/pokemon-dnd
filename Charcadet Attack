@@ -1,0 +1,23 @@
+- name: Ember Slash
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+3 [slashing]
+              overheal: null
+            - type: damage
+              damage: 1d4 [fire]
+              overheal: null
+          miss:
+            - type: text
+              text: Charcadet's fiery slash misses the target.
+              title: Effect
+    - type: text
+      text: Charcadet slashes with a burning blade, dealing slashing and fire damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: slashes with fiery claws
