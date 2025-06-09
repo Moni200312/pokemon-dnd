@@ -1,0 +1,37 @@
+- name: Web Shot
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 3d8+4 [piercing]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: ieffect
+                  name: Restrained
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target is ensnared by sticky webbing. It can use an action to attempt
+                    a DC 15 Strength check to escape.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "15"
+          miss: []
+    - type: text
+      text: Spidops shoots sticky webbing at a target. On a hit, the target takes
+        3d8+4 piercing damage and must succeed on a DC 15 Strength saving throw
+        or become restrained for 1 minute. The restrained target can repeat the
+        saving throw at the end of each of its turns, or use an action to free
+        itself.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: shoots sticky webbing
