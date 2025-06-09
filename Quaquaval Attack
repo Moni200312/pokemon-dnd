@@ -1,0 +1,40 @@
+- name: Aqua Samba
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: dex
+          fail:
+            - type: damage
+              damage: 5d8+5 [bludgeoning]
+              overheal: null
+            - type: ieffect2
+              name: Restrained
+              duration: "1"
+              effects: null
+              attacks: []
+              buttons: []
+              end: null
+              conc: null
+              desc: Ensnared by swirling water, the creature is restrained until the end of
+                its next turn.
+              stacking: null
+              save_as: null
+              parent: null
+              target_self: null
+              tick_on_caster: null
+          success:
+            - type: damage
+              damage: 5d8+5/2 [bludgeoning]
+              overheal: null
+          dc: "16"
+    - type: text
+      text: Quaquaval unleashes a powerful swirling dance of water. Each creature in a
+        15-foot radius must make a DC 16 Dexterity saving throw, taking 5d8+5
+        bludgeoning damage and becoming restrained on a failed save, or half
+        damage on a successful one.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: unleashes a swirling aquatic dance
