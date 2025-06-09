@@ -1,0 +1,29 @@
+- name: Crystal Hammer
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 4d10+5 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: condition
+                  condition: Stunned
+                  onTrue: []
+                  onFalse: []
+                  errorBehaviour: null
+              success: []
+              dc: "16"
+          miss: []
+    - type: text
+      text: Garganacl brings down a massive crystalline fist. On a hit, the target
+        takes 4d10+5 bludgeoning damage and must succeed on a DC 16 Constitution
+        saving throw or be stunned until the end of their next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: crushes with a crystalline hammer
