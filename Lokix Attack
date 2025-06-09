@@ -1,0 +1,34 @@
+- name: Axe Kick
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d10+5 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: ieffect
+                  name: Stunned
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target is briefly stunned by the impact of the Axe Kick.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "14"
+          miss: []
+    - type: text
+      text: Lokix leaps high and brings down a crushing axe kick. On a hit, the target
+        takes 2d10+5 bludgeoning damage and must succeed on a DC 14 Constitution
+        saving throw or be stunned until the end of Lokix's next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: delivers a stunning axe kick
