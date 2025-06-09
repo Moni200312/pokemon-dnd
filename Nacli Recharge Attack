@@ -1,0 +1,30 @@
+- name: Salt Burst
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: con
+          fail:
+            - type: damage
+              damage: 2d6 [acid]
+              overheal: null
+            - type: condition
+              condition: Poisoned
+              onTrue: []
+              onFalse: []
+              errorBehaviour: null
+          success:
+            - type: damage
+              damage: 2d6 [acid]
+              overheal: null
+          dc: "13"
+    - type: text
+      text: Nacli releases a burst of corrosive salt in a 10-foot radius. Each
+        creature must make a DC 13 Constitution saving throw, taking 2d6 acid
+        damage and becoming poisoned for 1 minute on a failed save, or half as
+        much damage on a successful one.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: releases a burst of corrosive salt
