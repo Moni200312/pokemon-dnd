@@ -1,0 +1,34 @@
+- name: Razor Leaf
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 3d6+3 [slashing]
+              overheal: null
+          miss: []
+    - type: text
+      text: Dolliv hurls sharp leaves at a target, dealing 3d6+3 slashing damage on a
+        hit.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: hurls sharp leaves
+- name: Leaf Slash
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+2 [slashing]
+              overheal: null
+          miss: []
+    - type: text
+      text: Smoliv slashes at a creature with sharp leaves, dealing 2d6+2 slashing
+        damage.
+      title: Effect
+  _v: 2
