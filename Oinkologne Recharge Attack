@@ -1,0 +1,89 @@
+- name: Snort (Recharge 5–6)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Snort Used
+          duration: "999"
+          effects:
+            attack_advantage: null
+            to_hit_bonus: null
+            damage_bonus: null
+            magical_damage: null
+            silvered_damage: null
+            resistances: null
+            immunities: null
+            vulnerabilities: null
+            ignored_resistances: null
+            ac_value: null
+            ac_bonus: null
+            max_hp_value: null
+            max_hp_bonus: null
+            save_bonus: null
+            save_adv: null
+            save_dis: null
+            check_bonus: null
+            check_adv: null
+            check_dis: null
+            dc_bonus: null
+          attacks: []
+          buttons:
+            - label: Recharge Snort
+              automation:
+                - type: roll
+                  dice: 1d6
+                  name: recharge
+                  hidden: null
+                - type: condition
+                  condition: recharge >= 5
+                  onTrue:
+                    - type: remove_ieffect
+                    - type: text
+                      text: "{{caster.name}} recharges their Snort!"
+                      title: Effect
+                  onFalse:
+                    - type: text
+                      text: "{{caster.name}} fails to recharge their Snort!"
+                      title: Effect
+                  errorBehaviour: null
+              verb: snorts loudly to recharge its power
+              style: "3"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: null
+          conc: null
+          desc: null
+          stacking: null
+          save_as: null
+          parent: null
+          target_self: null
+          tick_on_caster: null
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: wis
+          fail:
+            - type: ieffect
+              name: Frightened
+              duration: "1"
+              effects: ""
+              end: null
+              conc: null
+              desc: The target is frightened until the end of its next turn by the booming
+                snort.
+              stacking: null
+              save_as: null
+              parent: null
+          success: []
+          dc: "13"
+    - type: text
+      text: Oinkologne emits a thunderous snort in a 15-foot cone. Each creature in
+        that area must make a DC 13 Wisdom saving throw or become frightened
+        until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: unleashes a thunderous snort
