@@ -1,0 +1,29 @@
+- name: Volt Strike
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+3 [lightning]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: condition
+                  condition: Paralyzed
+                  onTrue: []
+                  onFalse: []
+                  errorBehaviour: null
+              success: []
+              dc: "12"
+          miss: []
+    - type: text
+      text: Tadbulb strikes its target with a sudden surge of electricity, dealing
+        2d6+3 lightning damage. The target must succeed on a DC 12 Strength
+        saving throw or be paralyzed for 1 round.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: strikes with lightning
