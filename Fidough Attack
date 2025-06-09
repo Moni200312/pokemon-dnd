@@ -1,0 +1,34 @@
+- name: Doughy Slap
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 1d6+2 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: ieffect
+                  name: Restrained
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target’s weapon or arm is stuck in Fidough’s yeasty body.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "12"
+          miss: []
+    - type: text
+      text: Fidough bops a creature with its soft, yeasty paws. On a hit, the target
+        takes 1d6+2 bludgeoning damage and must succeed on a DC 12 Strength
+        saving throw or be restrained until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: slaps with soft doughy paws
