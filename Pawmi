@@ -1,0 +1,34 @@
+- name: Static Zap
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 1d8+2 [lightning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: ieffect
+                  name: Paralyzed
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target is briefly paralyzed by the jolt of electricity.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "11"
+          miss: []
+    - type: text
+      text: Pawmi releases a quick jolt of electricity. On a hit, the target takes
+        1d8+2 lightning damage and must succeed on a DC 11 Constitution saving
+        throw or be paralyzed until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: zaps the target with a spark of electricity
