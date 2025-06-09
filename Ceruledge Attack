@@ -1,0 +1,21 @@
+- name: Frostblade Strike
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d8+3 [slashing]
+              overheal: null
+            - type: damage
+              damage: 2d6 [cold]
+              overheal: null
+          miss: []
+    - type: text
+      text: Ceruledge strikes with a frost-imbued blade, dealing slashing and cold
+        damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: strikes with a frostblade
