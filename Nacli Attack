@@ -1,0 +1,18 @@
+- name: Rock Throw
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d8+2 [bludgeoning]
+              overheal: null
+          miss: []
+    - type: text
+      text: Nacli hurls a chunk of salt-encrusted rock, dealing 2d8+2 bludgeoning
+        damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: hurls a chunk of rock
