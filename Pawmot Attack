@@ -1,0 +1,37 @@
+- name: Thunder Fist
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d8+4 [bludgeoning]
+              overheal: null
+            - type: damage
+              damage: 1d6 [lightning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: ieffect
+                  name: Stunned
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target is stunned by a jolt of electric energy.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "15"
+          miss: []
+    - type: text
+      text: Pawmot punches with electrified fists. On a hit, the target takes 2d8+4
+        bludgeoning and 1d6 lightning damage and must succeed on a DC 15
+        Constitution saving throw or be stunned until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: delivers an electrified punch
