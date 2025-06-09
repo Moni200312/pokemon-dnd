@@ -1,0 +1,17 @@
+- name: Ember Bite
+  automation:
+    - type: target
+      target: 1
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+1 [fire]
+              overheal: null
+          miss: []
+    - type: text
+      text: Fuecoco bites its target, dealing 2d6+1 fire damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: bites
