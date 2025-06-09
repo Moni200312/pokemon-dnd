@@ -1,0 +1,40 @@
+- name: Iceburst
+  automation:
+    - type: roll
+      dice: 6d6 [cold]
+      name: damage
+      hidden: null
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: dex
+          fail:
+            - type: damage
+              damage: "{damage}"
+              overheal: null
+            - type: ieffect
+              name: Slowed
+              duration: "1"
+              effects: ""
+              end: null
+              conc: null
+              desc: The target’s movement speed is halved until the start of Ceruledge's next
+                turn.
+              stacking: null
+              save_as: null
+              parent: null
+          success:
+            - type: damage
+              damage: "{damage}/2"
+              overheal: null
+          dc: "14"
+    - type: text
+      text: Ceruledge releases a burst of freezing energy in a 20-foot radius. Each
+        creature must make a DC 14 Dexterity saving throw, taking full cold
+        damage and becoming slowed on a failed save, or half damage on a
+        success.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: releases a freezing burst
