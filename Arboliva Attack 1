@@ -1,0 +1,26 @@
+- name: Binding Vines
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: str
+          fail:
+            - type: damage
+              damage: 3d8 [bludgeoning]
+              overheal: null
+            - type: condition
+              condition: Restrained
+              onTrue: []
+              onFalse: []
+              errorBehaviour: null
+          success: []
+          dc: "16"
+    - type: text
+      text: Arboliva summons thick vines to entangle foes. Each creature in a 15-foot
+        cone must succeed on a DC 16 Strength saving throw or take 3d8
+        bludgeoning damage and become restrained for 1 minute.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: summons thick vines
