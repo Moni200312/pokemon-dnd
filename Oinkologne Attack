@@ -1,0 +1,43 @@
+- name: Tail Slam
+  automation:
+    - type: roll
+      dice: 1d12+10 [bludgeoning]
+      name: damage
+      hidden: null
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: str
+          fail:
+            - type: damage
+              damage: "{damage}"
+              overheal: null
+            - type: ieffect2
+              name: Prone
+              duration: "1"
+              effects: null
+              attacks: []
+              buttons: []
+              end: null
+              conc: null
+              desc: The target is knocked prone by the force of the slam.
+              stacking: null
+              save_as: null
+              parent: null
+              target_self: null
+              tick_on_caster: null
+          success:
+            - type: damage
+              damage: "{damage}/2"
+              overheal: null
+          dc: "15"
+    - type: text
+      text: Oinkologne slams its massive tail in a wide arc. Each creature in range
+        must make a DC 15 Strength saving throw, taking 5d12+10 bludgeoning
+        damage on a failed save and being knocked prone. On a success, the
+        target takes half damage and remains standing.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: slams its massive tail
