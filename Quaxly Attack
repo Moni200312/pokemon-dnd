@@ -1,0 +1,27 @@
+- name: Aqua Kick
+  automation:
+    - type: target
+      target: 1
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+3 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: target
+                  target: 1
+                  effects: []
+              success: []
+              dc: "13"
+          miss: []
+    - type: text
+      text: Quaxly delivers a splashy kick. On hit, the target takes 2d6+3 bludgeoning
+        damage and must succeed on a DC 13 Strength saving throw or be pushed 5
+        feet back.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: kicks with a splash of water
