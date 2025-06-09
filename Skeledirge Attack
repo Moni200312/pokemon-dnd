@@ -1,0 +1,45 @@
+- name: Infernal Flame Slam
+  automation:
+    - type: roll
+      dice: 5d12+10 [bludgeoning]
+      name: damage
+      hidden: null
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: str
+          fail:
+            - type: damage
+              damage: "{damage} + 3d8 [fire]"
+              overheal: null
+            - type: ieffect2
+              name: Prone
+              duration: "1"
+              effects: null
+              attacks: []
+              buttons: []
+              end: null
+              conc: null
+              desc: The target is knocked prone by the force of the slam and scorched by
+                infernal flames.
+              stacking: null
+              save_as: null
+              parent: null
+              target_self: null
+              tick_on_caster: null
+          success:
+            - type: damage
+              damage: "{damage}/2 + 3d8 [fire]"
+              overheal: null
+          dc: "18"
+    - type: text
+      text: Skeledirge slams its massive, flaming tail in a devastating infernal arc.
+        Each creature within range must make a DC 18 Strength saving throw,
+        taking 5d12+10 bludgeoning damage plus 3d8 fire damage on a failed save
+        and being knocked prone. On a successful save, the target takes half
+        damage and remains standing.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: slams its massive flaming tail
