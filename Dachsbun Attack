@@ -1,0 +1,34 @@
+- name: Doughy Bite
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d8+3 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: ieffect
+                  name: Restrained
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: The target is stuck in Dachsbun’s gummy dough.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "13"
+          miss: []
+    - type: text
+      text: Dachsbun chomps with a surprisingly powerful doughy bite. On a hit, the
+        target takes 2d8+3 bludgeoning damage and must succeed on a DC 13
+        Strength saving throw or be restrained for 1 round.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: bites with gummy dough
