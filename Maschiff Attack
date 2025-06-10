@@ -1,0 +1,17 @@
+- name: Chomp
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+3 [piercing]
+              overheal: null
+          miss: []
+    - type: text
+      text: Maschiff chomps fiercely, dealing piercing damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: bites
