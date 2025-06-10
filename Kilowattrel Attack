@@ -1,0 +1,35 @@
+- name: Spark Jab
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d8+3 [lightning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: ieffect
+                  name: Paralyzed
+                  duration: "1"
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: Paralyzed until the end of its next turn.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "13"
+          miss: []
+    - type: text
+      text: Kilowattrel jolts forward with a surge of electricity. On a hit, the
+        target takes 2d8+3 lightning damage and must succeed on a DC 13
+        Constitution saving throw or be paralyzed until the end of its next
+        turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: lashes out with a jolt
