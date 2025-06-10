@@ -1,0 +1,70 @@
+- name: Aerial Surge
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Aerial Surge Used
+          duration: null
+          effects: null
+          attacks: []
+          buttons:
+            - label: Recharge Aerial Surge
+              automation:
+                - type: roll
+                  dice: 1d6
+                  name: recharge
+                  hidden: false
+                  cantripScale: false
+                - type: condition
+                  condition: int(recharge) >= 5
+                  onTrue:
+                    - type: remove_ieffect
+                    - type: text
+                      text: "{{caster.name}} recharges their Aerial Surge!"
+                      title: Effect
+                  onFalse:
+                    - type: text
+                      text: "{{caster.name}} doesn't recharge their Aerial Surge!"
+                      title: Effect
+                  errorBehaviour: "false"
+              verb: attempts to recharge their Aerial Surge
+              style: "3"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: null
+          conc: null
+          desc: null
+          stacking: true
+          save_as: null
+          parent: null
+          target_self: null
+          tick_on_caster: null
+    - type: roll
+      dice: 4d6 [thunder]
+      name: damage
+      hidden: null
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: str
+          fail:
+            - type: damage
+              damage: "{damage}"
+              overheal: null
+          success:
+            - type: damage
+              damage: "{damage}/2"
+              overheal: null
+          dc: "15"
+    - type: text
+      text: Kilowattrel beats its wings with intense force. Each creature in a 15-foot
+        cone must make a DC 15 Strength saving throw, taking 4d6 thunder damage
+        on a failed save and being pushed 15 feet away. On a success, the
+        creature takes half damage and isn't pushed.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: blasts the air with powerful wings
