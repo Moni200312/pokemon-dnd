@@ -1,0 +1,29 @@
+- name: Volt Strike
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 3d10+3 [lightning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: condition
+                  condition: Paralyzed
+                  onTrue: []
+                  onFalse: []
+                  errorBehaviour: null
+              success: []
+              dc: "14"
+          miss: []
+    - type: text
+      text: Bellibolt discharges a powerful jolt of electricity. On a hit, the target
+        takes 3d10+3 lightning damage and must succeed on a DC 14 Constitution
+        saving throw or be paralyzed until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: unleashes a burst of electricity at
