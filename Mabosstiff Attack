@@ -1,0 +1,29 @@
+- name: Powerful Bite
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 3d10+4 [piercing]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: condition
+                  condition: Restrained
+                  onTrue: []
+                  onFalse: []
+                  errorBehaviour: null
+              success: []
+              dc: "15"
+          miss: []
+    - type: text
+      text: Mabosstiff bites down fiercely. On a hit, it deals 3d10+4 piercing damage
+        and the target must succeed on a DC 15 Strength saving throw or be
+        restrained for 1 round.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: bites down fiercely
