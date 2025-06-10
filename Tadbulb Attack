@@ -1,4 +1,4 @@
-- name: Volt Strike
+- name: Volt Tap
   automation:
     - type: target
       target: each
