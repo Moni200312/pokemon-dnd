@@ -1,5 +1,46 @@
 - name: Iceburst
   automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Iceburst Used
+          duration: null
+          effects: null
+          attacks: []
+          buttons:
+            - label: Recharge Iceburst
+              automation:
+                - type: roll
+                  dice: 1d6
+                  name: recharge
+                  hidden: false
+                  cantripScale: false
+                - type: condition
+                  condition: int(recharge) >= 5
+                  onTrue:
+                    - type: remove_ieffect
+                    - type: text
+                      text: "{{caster.name}} recharges their Iceburst!"
+                      title: Effect
+                  onFalse:
+                    - type: text
+                      text: "{{caster.name}} doesn't recharge their Iceburst!"
+                      title: Effect
+                  errorBehaviour: "false"
+              verb: attempts to recharge their Iceburst
+              style: "3"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: null
+          conc: null
+          desc: null
+          stacking: true
+          save_as: null
+          parent: null
+          target_self: null
+          tick_on_caster: null
     - type: roll
       dice: 6d6 [cold]
       name: damage
