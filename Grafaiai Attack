@@ -1,0 +1,38 @@
+- name: Ink Lash
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+4 [slashing]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: damage
+                  damage: 2d8 [poison]
+                  overheal: null
+                - type: ieffect
+                  name: Blinded
+                  duration: 1 round
+                  effects: ""
+                  end: null
+                  conc: null
+                  desc: null
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "13"
+          miss: []
+    - type: text
+      text: Grafaiai lashes out with a toxic, paint-coated tail. On a hit, it deals
+        2d6+4 slashing damage. The target must succeed on a DC 13 Constitution
+        saving throw or take 2d8 poison damage and be blinded until the end of
+        its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: lashes out with a toxic tail
