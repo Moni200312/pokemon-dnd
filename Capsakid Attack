@@ -1,0 +1,27 @@
+- name: Pepper Kick
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+2 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: damage
+                  damage: 1d4 [fire]
+                  overheal: null
+              success: []
+              dc: "11"
+          miss: []
+    - type: text
+      text: Capsakid delivers a swift kick infused with fiery energy. On a hit, the
+        target takes 2d6+2 bludgeoning damage. On a failed DC 11 Constitution
+        saving throw, the target also takes 1d4 fire damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: kicks with a burst of spice
