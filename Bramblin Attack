@@ -1,0 +1,27 @@
+- name: Bramblesnap
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+2 [piercing]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: text
+                  text: The target is pulled 10 feet closer.
+                  title: Effect
+              success: []
+              dc: "12"
+          miss: []
+    - type: text
+      text: Bramblin snaps its thorn-covered vines toward the target. On a hit, the
+        target takes 2d6+2 piercing damage and must succeed on a DC 12 Strength
+        saving throw or be pulled 10 feet closer.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: snaps its thorny vines
