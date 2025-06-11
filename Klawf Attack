@@ -1,0 +1,40 @@
+- name: Crushing Claw
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d10+4 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: str
+              fail:
+                - type: ieffect
+                  name: Restrained
+                  duration: "1"
+                  effects: The target is grappled and restrained in Klawf's crushing pincer.
+                  end: null
+                  conc: null
+                  desc: null
+                  stacking: null
+                  save_as: null
+                  parent: null
+                - type: text
+                  text: The target is caught in Klawf's claw and is restrained.
+                  title: Effect
+              success:
+                - type: text
+                  text: The target resists the restraint.
+                  title: Effect
+              dc: "14"
+          miss: []
+    - type: text
+      text: Klawf strikes with a powerful pincer. On a hit, the target takes 2d10+4
+        bludgeoning damage and must succeed on a DC 14 Strength saving throw or
+        become restrained until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: clamps down with a massive claw
