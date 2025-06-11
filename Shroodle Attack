@@ -1,0 +1,27 @@
+- name: Toxic Swipe
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 1d6+3 [slashing]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: damage
+                  damage: 2d6 [poison]
+                  overheal: null
+              success: []
+              dc: "12"
+          miss: []
+    - type: text
+      text: Shroodle slashes at a creature with toxic claws. On a hit, it deals 1d6+3
+        slashing damage and the target must succeed on a DC 12 Constitution
+        saving throw or take 2d6 poison damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: slashes with toxic claws
