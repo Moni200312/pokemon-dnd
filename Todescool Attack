@@ -1,0 +1,40 @@
+- name: Mycelial Slap
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+2 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: ieffect
+                  name: Poisoned
+                  duration: "1"
+                  effects: The target is poisoned by fungal spores.
+                  end: null
+                  conc: null
+                  desc: null
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success:
+                - type: text
+                  text: The target resists the fungal poison.
+                  title: Effect
+              dc: "13"
+          miss:
+            - type: text
+              text: The fungal tendrils miss their mark!
+              title: Effect
+    - type: text
+      text: Toedscool lashes out with its fungal tendrils. On a hit, the target takes
+        2d6+2 bludgeoning damage and must succeed on a DC 13 Constitution saving
+        throw or be poisoned for 1 minute.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: lashes out with its fungal tendrils
