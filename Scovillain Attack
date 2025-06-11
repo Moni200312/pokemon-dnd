@@ -1,0 +1,21 @@
+- name: Spice Burst
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 4d6+3 [fire]
+              overheal: null
+            - type: damage
+              damage: 2d6 [poison]
+              overheal: null
+          miss: []
+    - type: text
+      text: Scovillain unleashes a fiery and toxic burst from both heads. On a hit,
+        the target takes 4d6+3 fire damage and 2d6 poison damage.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: unleashes a fiery, toxic burst
