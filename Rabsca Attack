@@ -1,0 +1,35 @@
+- name: Mind Pulse
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 4d8+3 [psychic]
+              overheal: null
+            - type: save
+              stat: int
+              fail:
+                - type: condition
+                  condition: Incapacitated
+                  onTrue: []
+                  onFalse: []
+                  errorBehaviour: null
+                - type: text
+                  text: The target is overwhelmed and becomes incapacitated.
+                  title: Effect
+              success:
+                - type: text
+                  text: The target resists the psychic overload.
+                  title: Effect
+              dc: "14"
+          miss: []
+    - type: text
+      text: Rabsca lashes out with a wave of psychic energy. On a hit, the target
+        takes 4d8+3 psychic damage and must succeed on a DC 14 Intelligence
+        saving throw or be incapacitated until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: unleashes a wave of psychic force
