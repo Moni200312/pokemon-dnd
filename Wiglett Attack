@@ -1,0 +1,26 @@
+- name: Water Jet
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: str
+          fail:
+            - type: damage
+              damage: 2d6 [cold]
+              overheal: null
+            - type: ieffect
+              name: Prone
+              duration: "1"
+              effects: The target is knocked prone.
+              end: null
+              conc: null
+              desc: Target is knocked prone by the water jet.
+              stacking: null
+              save_as: null
+              parent: null
+          success: []
+          dc: "12"
+  _v: 2
+  proper: true
+  verb: fires a powerful water jet
