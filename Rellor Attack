@@ -1,0 +1,35 @@
+- name: Roll Strike
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+2 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: dex
+              fail:
+                - type: condition
+                  condition: Prone
+                  onTrue: []
+                  onFalse: []
+                  errorBehaviour: null
+                - type: text
+                  text: The target is knocked prone by the rolling impact.
+                  title: Effect
+              success:
+                - type: text
+                  text: The target avoids being knocked prone.
+                  title: Effect
+              dc: "12"
+          miss: []
+    - type: text
+      text: Rellor rolls forward with its dirt ball, slamming into a creature. On a
+        hit, it deals 2d6+2 bludgeoning damage and forces a DC 12 Dexterity
+        saving throw or knocks the target prone.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: slams into
