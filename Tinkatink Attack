@@ -1,0 +1,19 @@
+- name: Hammer Bash
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+2 [bludgeoning]
+              overheal: null
+          miss: []
+    - type: text
+      text: Tinkatink swings its handcrafted hammer with surprising force, dealing
+        2d6+2 bludgeoning damage on a hit.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: bashes with its hammer
+- name: Gleaming Smite
