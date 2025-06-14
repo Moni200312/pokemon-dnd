@@ -1,0 +1,40 @@
+- name: Gleam Kick
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d10+3 [psychic]
+              overheal: null
+            - type: save
+              stat: wis
+              fail:
+                - type: ieffect
+                  name: Stunned
+                  duration: "1"
+                  effects: The target is stunned until the end of its next turn.
+                  end: null
+                  conc: null
+                  desc: The target is dazed by Espathra's gleaming kick and is stunned.
+                  stacking: null
+                  save_as: null
+                  parent: null
+                - type: text
+                  text: The target is stunned until the end of its next turn.
+                  title: Effect
+              success:
+                - type: text
+                  text: The target resists the psychic stun.
+                  title: Effect
+              dc: "15"
+          miss: []
+    - type: text
+      text: Espathra lashes out with a dazzling kick infused with psychic power. On a
+        hit, the target takes 2d10+3 psychic damage and must succeed on a DC 15
+        Wisdom saving throw or be stunned until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: lashes out with a gleaming kick
