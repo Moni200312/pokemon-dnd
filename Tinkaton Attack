@@ -1,0 +1,34 @@
+- name: Gigaton Hammer
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 4d10+5 [bludgeoning]
+              overheal: null
+            - type: save
+              stat: con
+              fail:
+                - type: ieffect
+                  name: Gigaton Impact
+                  duration: "1"
+                  effects: The target is stunned until the end of its next turn.
+                  end: null
+                  conc: null
+                  desc: The target is stunned until the end of its next turn.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success: []
+              dc: "16"
+          miss: []
+    - type: text
+      text: Tinkaton swings her massive hammer with explosive force. On a hit, the
+        target takes 4d10+5 bludgeoning damage and must succeed on a DC 16
+        Constitution saving throw or be stunned until the end of its next turn.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: slams her enormous hammer down
