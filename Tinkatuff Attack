@@ -33,3 +33,7 @@
         failed save, it takes 3d8 radiant damage and has disadvantage on its
         next attack roll. On a success, it takes 1d8 radiant damage and suffers
         no additional effects.
+      title: Effect
+  _v: 2
+  proper: true
+  verb: unleashes radiant force
