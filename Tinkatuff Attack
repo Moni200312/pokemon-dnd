@@ -1,0 +1,35 @@
+- name: Gleaming Smite
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: save
+              stat: cha
+              fail:
+                - type: damage
+                  damage: 3d8 [radiant]
+                  overheal: null
+                - type: ieffect
+                  name: Blinded Light
+                  duration: "1"
+                  effects: The creature has disadvantage on its next attack roll.
+                  end: null
+                  conc: null
+                  desc: The creature has disadvantage on its next attack roll.
+                  stacking: null
+                  save_as: null
+                  parent: null
+              success:
+                - type: damage
+                  damage: 1d8 [radiant]
+                  overheal: null
+              dc: "13"
+          miss: []
+    - type: text
+      text: Tinkatuff channels radiant fey energy into a burst of blinding light. Each
+        creature within 10 feet must make a DC 13 Charisma saving throw. On a
+        failed save, it takes 3d8 radiant damage and has disadvantage on its
+        next attack roll. On a success, it takes 1d8 radiant damage and suffers
+        no additional effects.
