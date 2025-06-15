@@ -1,0 +1,24 @@
+- name: Rock Drop
+  automation:
+    - type: roll
+      dice: 4d6 [bludgeoning]
+      name: damage
+      hidden: null
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: dex
+          fail:
+            - type: damage
+              damage: "{damage}"
+              overheal: null
+          success:
+            - type: damage
+              damage: "{damage}/2"
+              overheal: null
+          dc: "13"
+  _v: 2
+  proper: true
+  verb: drops a massive rock
+  phrase: Bombirdier releases a boulder from above, crashing it down on its foes.
