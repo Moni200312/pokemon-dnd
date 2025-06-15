@@ -1,0 +1,14 @@
+- name: Beak Strike
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 2d6+3 [piercing]
+              overheal: null
+          miss: []
+  _v: 2
+  proper: true
+  verb: pecks fiercely
