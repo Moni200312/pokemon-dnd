@@ -1,0 +1,30 @@
+- name: Mud Spray
+  automation:
+    - type: target
+      target: each
+      effects:
+        - type: save
+          stat: dex
+          fail:
+            - type: damage
+              damage: 3d6 [bludgeoning]
+              overheal: null
+            - type: ieffect2
+              name: Blinded (Mud Spray)
+              duration: "1"
+              effects: null
+              attacks: []
+              buttons: []
+              end: null
+              conc: null
+              desc: Target is blinded until the end of its next turn.
+              stacking: null
+              save_as: null
+              parent: null
+              target_self: null
+              tick_on_caster: null
+          success: []
+          dc: "13"
+  _v: 2
+  proper: true
+  verb: sprays mud
